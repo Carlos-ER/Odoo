@@ -15,7 +15,7 @@ then
 	su jenkins
 	cat /var/lib/jenkins/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 	cat /var/lib/jenkins/.ssh/id_rsa.pub >> /tmp/key_pub.txt
-	scp /tmp/key_pub.txt adri@192.168.100.11:/tmp
+	scp /tmp/key_pub.txt adri@192.168.0.51:/tmp
 	# Script
 	echo "#! /bin/bash
 		user=$(whoami)
@@ -26,8 +26,8 @@ then
 		else
 			echo "Debes de ser root para poder ejecutar el script"
 		fi" > /tmp/key.sh
-	scp /tmp/key.sh adri@192.168.100.11:/tmp
-	#cat /root/.ssh/id_rsa.pub | ssh root@192.168.100.11 "cat - >> ~/.ssh/authorized_keys"
+	scp /tmp/key.sh cliente@192.168.0.51:/tmp
+	#cat /root/.ssh/id_rsa.pub | ssh root@192.168.0.51 "cat - >> ~/.ssh/authorized_keys"
 else
 	echo "Debes de ser root para poder ejecutar el script"
 fi
