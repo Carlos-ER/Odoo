@@ -15,7 +15,7 @@ then
 	su jenkins
 	cat /var/lib/jenkins/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 	cat /var/lib/jenkins/.ssh/id_rsa.pub >> /tmp/key_pub.txt
-	scp /tmp/key_pub.txt adri@192.168.0.51:/tmp
+	scp /tmp/key_pub.txt cliente@192.168.0.51:/tmp
 	# Script
 	echo "#! /bin/bash
 		user=$(whoami)
