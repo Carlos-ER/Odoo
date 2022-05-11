@@ -1,12 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Ping') {
-      steps {
-        sh 'ansible all -m ping'
-      }
-    }
-
     stage('Install Docker') {
       steps {
         ansiblePlaybook(playbook: 'dependencies.yml', inventory: 'hosts', colorized: true, becomeUser: 'all')
